@@ -136,3 +136,6 @@ KeyPair/
 
 # Environment Variables 
 env.yml
+
+#Private Notes 
+PrivateNotes.txt

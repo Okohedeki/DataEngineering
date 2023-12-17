@@ -3,6 +3,6 @@ docker ps (view containers)
 
 todo 
 
-Finish mapping medical conditions and fix the ... issue 
 Get into postgres   
 Create dag to allow airflow to manage it 
+send data to s3 buckets Data Lakes using Parquet files, 
