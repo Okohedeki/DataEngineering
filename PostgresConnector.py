@@ -2,10 +2,12 @@ import psycopg2
 from psycopg2 import sql
 from psycopg2.extras import execute_batch
 import polars as pl
+import logging 
 
 from dotenv import load_dotenv
 import os
 import traceback
+from RequestLogger import DatabaseLoggingHandler
 
 load_dotenv()  # This will load the environment variables from the .env file
 
@@ -24,7 +26,9 @@ class PostgresConnector:
                 'password': os.getenv('DB_PASSWORD', 'default_password'),
                 'host': os.getenv('DB_HOST', 'default_host')
             }
-            
+
+        
+
     def set_unique_columns(self, unique_columns=None):
             """
             Set or reset the unique columns for the inserter.
@@ -46,6 +50,7 @@ class PostgresConnector:
         if not self.connection:
             print("Not connected to the database.")
             return
+            
 
         # database_name = self.connection.get_dsn_parameters()['dbname']
         # print(database_name)
@@ -106,8 +111,8 @@ class PostgresConnector:
 
                 return None
 
-    def read_table_column_into_polars_dataframe(self, table, column, value):
-        """ Reads data from a specified table and column into a Polars DataFrame based on a value match. """
+    def read_table_column_into_polars_dataframe_where(self, table, column, value):
+        """ Reads data from a specified table and column into a Polars DataFrame based on a where statement. """
         if not self.connection:
             print("Not connected to the database.")
             return None
