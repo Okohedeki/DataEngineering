@@ -8,3 +8,10 @@ Create dag to allow airflow to manage it
 send data to s3 buckets Data Lakes using Parquet files, 
 
 Test Keys 
+
+https://airflow.apache.org/docs/apache-airflow/2.5.0/howto/set-up-database.html
+
+
+https://arxiv.org/abs/2312.10740v1?utm_source=tldrai
+
+https://blog.research.google/2023/12/videopoet-large-language-model-for-zero.html?utm_source=tldrai
