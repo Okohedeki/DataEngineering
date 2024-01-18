@@ -16,3 +16,5 @@ soupsieve
 tzdata
 urllib3
 pendulum
+apache-airflow-providers-postgres
+apache-airflow-providers-amazon
